@@ -9,6 +9,8 @@
 
 # Ejercicios con comprensión de listas
 
+import numpy as np
+from sqlalchemy import null
 
 if __name__ == '__main__':
     print("Bienvenidos a otra clase de Inove con Python")
@@ -30,6 +32,15 @@ if __name__ == '__main__':
 
     # personal_1_10 = [.....]
 
+    naccessos = np.asanyarray(accesos)
+  
+    mask_personal_1_10 =  naccessos<=10  
+
+    personal_1_10 = naccessos[mask_personal_1_10]
+    
+    print ("Personal registrado con ID entre 1 y 10:", len(personal_1_10))
+
+
     # 2)
     # Generar una lista por comprensión de la listas "accesos"
     # cuyo ID de personal esté dentro de los ID válidos para ingresar
@@ -41,5 +52,16 @@ if __name__ == '__main__':
     # dentro de "id_validos"
 
     # personal_valido = [.....]
+
+    personal_valido = [ x for x  in accesos if  x in id_validos  ]
+
+
+    print (personal_valido)
+
+
+    #personal_valido = naccessos[mask_personal_valido]
+
+    #print (personal_valido)
+
 
     print("terminamos")
