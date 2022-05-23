@@ -12,6 +12,8 @@
 
 # IMPORTANTE: NO borrar los comentarios en VERDE o NARANJA
 
+
+
 '''
 Enunciado:
 Empecemos a jugar con las listas y su métodos, el objetivo
@@ -27,10 +29,25 @@ que ya dispongamos de Python. El objetivo es:
         la suma y los números recoletados
     b) Si el número es mayor a 21 se debe informar al usuario que perdio
 '''
+import random
+import numpy as np
 
 if __name__ == '__main__':
     print('Comenzamos a divertirnos!')
     # A partir de aquí escriba el código que resuelve el enunciado
     # Leer el enunciado con atención y consultar cualquier duda
+
+    numeros = [random.randint(1,10) for x in range(3)]
+
+    sum_numeros = np.sum(numeros)
+
+
+    if  sum_numeros <= 21:
+        print("Numeros recolectados:",  numeros) 
+        print("Suma:", sum_numeros)
+    else: 
+        print("Usted perdió la partida! Suma:", sum_numeros )
+
+
 
     print("terminamos")

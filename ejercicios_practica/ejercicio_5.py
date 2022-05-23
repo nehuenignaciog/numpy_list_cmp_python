@@ -55,7 +55,6 @@ if __name__ == '__main__':
 
     personal_valido = [ x for x  in accesos if  x in id_validos  ]
 
-
     print (personal_valido)
 
 

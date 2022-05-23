@@ -57,10 +57,14 @@ if __name__ == '__main__':
                 905045: 'Computadora',
                 }
 
+
     lista_compra_id = [556070, 905045, 42135, 5674, 704060, 1264, 42135, 3654]
 
     # A partir de aquí escriba el código que resuelve el enunciado
     # Leer el enunciado con atención y consultar cualquier duda
 
+    lista_compra_productos = [producto[x] for x in lista_compra_id if x in producto]
 
+    print (lista_compra_productos)
+    
     print("terminamos")
