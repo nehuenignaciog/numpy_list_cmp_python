@@ -26,7 +26,7 @@ if __name__ == '__main__':
     # para aplicar en este caso.
     list_numeros_str = ['5', '2', '3', '', '7', 'NaN']
 
-    list_numeros_num = [0 if not x.isdigit() else int(x) for x in list_numeros_str ]
+    list_numeros_num = [int(x) if x.isdigit() else 0  for x in list_numeros_str ]
 
     print (list_numeros_num)
 
@@ -36,7 +36,32 @@ if __name__ == '__main__':
 
     list_numeros_str = ['-5', '2', '3', '', '7', 'NaN']
 
-    list_numeros_num = [0 if  not x.isdigit()  else int(x) for x in list_numeros_str ]
+    list_numeros_num = [int(x) if   x.isdigit()  else 0 for x in list_numeros_str ]
+
+    print (list_numeros_num)
+    #Respuesta: reconoce los carcteres de signo como digitos.
+
+
+    #Pruebo reemplazando los caracteres + o -
+
+    def convertir_int(x):
+        try:
+            return int(x)
+        except:
+            return 0
+
+    list_numeros_str = ['-5', '2', '3', '', '7', 'NaN']
+
+    
+    #Se me ocurren dos formas de resolver, con un tray except. Creo la funcion antes (convertir_int()). 
+
+    list_numeros_num = [int(x) if  x.isdigit()  else convertir_int(x) for x in list_numeros_str ]
+
+    print (list_numeros_num)
+    
+    #Sino sacar los caracteres de signo.
+
+    list_numeros_num = [int(x) if   x.replace("-","").replace("+","").isdigit()  else 0 for x in list_numeros_str ]
 
     print (list_numeros_num)
 
